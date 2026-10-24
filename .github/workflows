@@ -1,0 +1,94 @@
+name: Build Desktop (Windows + Linux)
+
+# Construit le logiciel de bureau UNAMDD dans le cloud GitHub.
+# Produit un installateur Windows (.exe) et une AppImage Linux,
+# téléchargeables comme « artifacts ». Aucune installation locale requise.
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install
+        run: npm install
+      - name: Build Windows
+        run: npm run dist:win
+      - name: Upload Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: UNAMDD-logiciel-Windows
+          path: dist/*.exe
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install
+        run: npm install
+      - name: Build Linux
+        run: npm run dist:linux
+      - name: Upload Linux
+        uses: actions/upload-artifact@v4
+        with:
+          name: UNAMDD-logiciel-Linux
+          path: dist/*.AppImage
+name: Build Android APK
+
+# Génère automatiquement un APK U.N.A.M.DD dans le cloud GitHub.
+# Aucune installation locale n'est nécessaire : poussez ce dossier sur un dépôt
+# GitHub, l'APK est produit comme "artifact" téléchargeable.
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Add Android platform
+        run: npx cap add android || npx cap sync android
+
+      - name: Sync web assets
+        run: npx cap sync android
+
+      - name: Build debug APK
+        run: cd android && chmod +x gradlew && ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: UNAMDD-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
