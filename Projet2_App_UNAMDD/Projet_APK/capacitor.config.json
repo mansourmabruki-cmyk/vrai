@@ -1,0 +1,12 @@
+{
+  "appId": "cd.unamdd.exploration",
+  "appName": "U.N.A.M.DD",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

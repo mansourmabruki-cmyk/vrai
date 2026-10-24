@@ -1,0 +1,15 @@
+{
+  "_commentaire": "Manifeste de versions des APK UNAMDD. Publiez ce fichier en ligne (GitHub Releases, Firebase, hebergement web...) et collez son URL dans Parametres > Versions & mises a jour. Incrementez 'version' a chaque nouvelle compilation.",
+  "app": {
+    "version": "1.1.0",
+    "date": "2026-10-22",
+    "url": "https://exemple.org/unamdd/app-debug.apk",
+    "notes": "Export KML/GPX, alerte IPIS, signature electronique, suivi des versions."
+  },
+  "carte": {
+    "version": "1.0.0",
+    "date": "2026-10-20",
+    "url": "https://exemple.org/unamdd/carte-cami.apk",
+    "notes": "Carte des carres miniers CAMI (version initiale)."
+  }
+}

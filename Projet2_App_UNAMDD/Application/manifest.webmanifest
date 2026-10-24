@@ -1,0 +1,16 @@
+{
+  "name": "U.N.A.M.DD – Bureau d'Exploration",
+  "short_name": "U.N.A.M.DD",
+  "description": "Rapports d'exploration minière et évaluation des agents de terrain.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef1f5",
+  "theme_color": "#0A2540",
+  "icons": [
+    { "src": "assets/icon192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icon512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

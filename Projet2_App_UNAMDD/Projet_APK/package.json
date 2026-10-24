@@ -1,0 +1,21 @@
+{
+  "name": "unamdd-exploration",
+  "version": "1.0.0",
+  "description": "U.N.A.M.DD – Bureau d'Exploration (application mobile Android via Capacitor)",
+  "private": true,
+  "scripts": {
+    "add:android": "cap add android",
+    "sync": "cap sync android",
+    "open": "cap open android",
+    "build:apk": "cd android && ./gradlew assembleDebug",
+    "build:release": "cd android && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.1.2",
+    "@capacitor/core": "6.1.2",
+    "@capacitor/geolocation": "6.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "6.1.2"
+  }
+}

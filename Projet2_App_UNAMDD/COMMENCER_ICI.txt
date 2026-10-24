@@ -1,0 +1,49 @@
+========================================================
+  U.N.A.M.DD - Bureau d'Exploration
+  Societe Miniere sarl - R.D. Congo
+  DOSSIER COMPLET - COMMENCER ICI
+========================================================
+
+Ce dossier contient TOUT, en un seul endroit :
+
+  1) Application/        -> l'application prete a l'emploi (hors-ligne)
+  2) Projet_APK/         -> le projet pour fabriquer le fichier .APK
+  3) Guide_UNAMDD.pdf    -> le guide d'utilisation complet (a lire en 1er)
+
+--------------------------------------------------------
+PAR OU COMMENCER (petit a petit)
+--------------------------------------------------------
+
+ETAPE 1 - Lire le guide
+  Ouvrez "Guide_UNAMDD.pdf". Tout y est explique avec des images.
+
+ETAPE 2 - Essayer l'application tout de suite (ordinateur)
+  Ouvrez le dossier "Application" puis double-cliquez sur "index.html".
+  Elle s'ouvre dans Chrome ou Edge et fonctionne sans Internet.
+  Pour l'installer comme un logiciel : dans Chrome/Edge, cliquez sur
+  l'icone d'installation dans la barre d'adresse (ou menu ... > Installer).
+
+ETAPE 3 - Installer sur le telephone (sans APK, le plus simple)
+  Copiez le dossier "Application" sur le telephone, ouvrez "index.html"
+  dans Chrome, puis menu ... > "Ajouter a l'ecran d'accueil".
+  L'application s'installe avec son icone et marche hors-ligne.
+
+ETAPE 4 - Fabriquer un vrai fichier .APK (quand vous voulez)
+  Ouvrez le dossier "Projet_APK" et lisez "BUILD_APK.md".
+  Methode la plus automatique : GitHub Actions (workflow deja inclus).
+  Methode la plus rapide sans coder : PWABuilder.com
+
+ETAPE 5 - Partager les memes donnees entre PC et telephone (optionnel)
+  Dans l'application : onglet Parametres > Espace cloud.
+  Suivez la section 7 du guide (Firebase, gratuit).
+
+--------------------------------------------------------
+A RETENIR
+--------------------------------------------------------
+- L'application fonctionne a 100% hors-ligne, les donnees restent
+  sur votre appareil.
+- La fabrication finale de l'.APK et la mise en ligne se font sur
+  votre poste ou vos comptes (Firebase / GitHub) : tout est explique,
+  pas a pas, dans le guide et dans BUILD_APK.md.
+
+Bon demarrage !
